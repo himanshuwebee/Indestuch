@@ -623,24 +623,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const tab = document.querySelector(`#pills-${category}-tab`);
     const tabPane = document.querySelector(`#pills-${category}`);
 
-    document.querySelectorAll(' product-category-tab .nav-link').forEach(link => link.classList.remove('active'));
+    document.querySelectorAll('.product-category-tab .nav-link').forEach(link => link.classList.remove('active'));
     document.querySelectorAll('.product-category-tab .tab-pane').forEach(pane => pane.classList.remove('active', 'show'));
 
     if (tab && tabPane) {
       tab.classList.add('active');
       tabPane.classList.add('active', 'show');
-      updateLabelColor(category);
     }
   }
 
   function updateLabelColor(category) {
     checkboxContainers.forEach((container) => {
       const checkbox = container;
-      const productList = container;
 
       if (checkbox.id.trim().toLowerCase() === category) {
-        console.log(`Checkbox ${category} state: ${checkbox.classList.contains("active")}`);
-
         checkbox.classList.add("active");
       } else {
         checkbox.classList.remove("active");
@@ -657,6 +653,38 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+// Canvas  Tabs
+
+function onViewProductClick(category) {
+
+  sessionStorage.setItem('selectedCategory', category);
+
+  window.location.href = 'artistcanvas.html';
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+
+  var selectedCategory = sessionStorage.getItem('selectedCategory');
+
+  sessionStorage.removeItem('selectedCategory');
+
+  if (selectedCategory) {
+
+      document.querySelectorAll('.nav-link').forEach(function(tabLink) {
+          tabLink.classList.remove('active');
+      });
+
+      var tab = document.querySelector('#pills-' + selectedCategory + '-tab');
+      if (tab) {
+          tab.classList.add('active');
+          tab.click(); 
+      }
+  }
+});
+
+
+
 
 // Accordion Collapse For Product Category Tab
 document.addEventListener("DOMContentLoaded", () => {
@@ -693,21 +721,29 @@ var swiper = new Swiper(".product-slider", {
   },
 });
 //Sub Menu Dropdown
+var closeTimer;
+
 function closeDropdown() {
-  $('.site-dropdown a span').removeClass('rotate');
-  $('.site-submenu').removeClass('site-submenu-open');
+  closeTimer = setTimeout(function() {
+    $('.site-dropdown a span').removeClass('rotate');
+    $('.site-submenu').removeClass('site-submenu-open');
+  }, 200); 
 }
 
-$('.site-dropdown').click(function () { 
- $('.site-dropdown a span').toggleClass('rotate');
-  $('.site-submenu').toggleClass('site-submenu-open');
+$('.site-dropdown').hover(function () { 
+  clearTimeout(closeTimer); 
+  $('.site-dropdown a span').addClass('rotate');
+  $('.site-submenu').addClass('site-submenu-open');
+}, function() {
+  closeDropdown();
 });
-$(document).click(function (event) {
-  
-  if (!$(event.target).closest('.site-submenu').length && !$(event.target).closest('.site-dropdown').length) {
-    closeDropdown();
-  }
+
+$('.site-submenu').hover(function () {
+  clearTimeout(closeTimer); 
+}, function() {
+  closeDropdown();
 });
+
 
 // Single Product Gallery
 

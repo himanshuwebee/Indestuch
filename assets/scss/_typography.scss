@@ -104,7 +104,7 @@ a {
   color: $textColor;
 
   &:hover {
-    text-decoration: underline;
+    text-decoration: none;
     color: $accent;
   }
 }
@@ -128,31 +128,9 @@ a {
     opacity: 0.5;
   }
 }
-
-/* ----- Smooth Scroll ----- */
-// html {
-//   .has-scroll {
-//     &-smooth {
-//       overflow: hidden;
-//     }
-//     &-dragging {
-//       -webkit-user-select: none;
-//       -moz-user-select: none;
-//       -ms-user-select: none;
-//       user-select: none;
-//     }
-//   }
-// }
-
-// .has-scroll-smooth {
-//   body {
-//   overflow: hidden;
-//   }
-//   [data-scroll-container] {
-//     min-height: 100vh;
-//   }
-// }
-
+.text-dark{
+  color: $primary;
+}
 /* ----- Form Elements ----- */
 input {
   &[type="text"],
