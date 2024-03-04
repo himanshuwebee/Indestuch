@@ -279,6 +279,19 @@
          }
          & a{
           color: $dark !important;
+          &:hover,
+            &.active {
+              text-decoration: none;
+              color: $accent !important;
+              &:before {
+               background: transparent;
+              }
+            }
+           
+            &:after {
+              content: "";
+              background: transparent;
+            }
          }
         }
       }
@@ -1509,15 +1522,43 @@
 
   }
   &-content{
-    padding: 20px;
+    padding: 40px 20px;
     text-align: center;
   }
+  
   &-read-more{
     
    & .btn-secondary{
     width: 250px !important;
   
    }
+  }
+  &-post-content{
+    padding: 15px 0 0 0;
+  }
+  &-recent{
+    &-list{
+     li{
+      & a{
+        font-size: 20px;
+        line-height: 30px;
+        padding-top: 15px;
+      }
+     }
+    }
+    &-title{
+      position: relative;
+      &::after{
+         content: "";
+         position: absolute;
+         background-color: $accent;
+         width: 100px;
+         height: 3px;
+         left: 0;
+         bottom: -4px;
+
+      }
+    }
   }
 }
 

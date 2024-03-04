@@ -126,7 +126,11 @@ a {
   color: #2B2B2E;
 }
 a:hover {
+<<<<<<< HEAD
   text-decoration: underline;
+=======
+  text-decoration: none;
+>>>>>>> 53c8aae7b7afe1e10f223405e8e51a7ad9cf81e6
   color: #F74225;
 }
 
@@ -149,7 +153,14 @@ a:hover {
   opacity: 0.5;
 }
 
+<<<<<<< HEAD
 /* ----- Smooth Scroll ----- */
+=======
+.text-dark {
+  color: #000;
+}
+
+>>>>>>> 53c8aae7b7afe1e10f223405e8e51a7ad9cf81e6
 /* ----- Form Elements ----- */
 input[type=text], input[type=email], input[type=search], input[type=password], input[type=number], input[type=date] {
   width: 420px;
@@ -1172,6 +1183,20 @@ iframe {
 .navbar .site-submenu ul li a {
   color: #000 !important;
 }
+<<<<<<< HEAD
+=======
+.navbar .site-submenu ul li a:hover, .navbar .site-submenu ul li a.active {
+  text-decoration: none;
+  color: #F74225 !important;
+}
+.navbar .site-submenu ul li a:hover:before, .navbar .site-submenu ul li a.active:before {
+  background: transparent;
+}
+.navbar .site-submenu ul li a:after {
+  content: "";
+  background: transparent;
+}
+>>>>>>> 53c8aae7b7afe1e10f223405e8e51a7ad9cf81e6
 .navbar .site-submenu-open {
   display: block;
 }
@@ -2255,12 +2280,39 @@ iframe {
   width: 100%;
 }
 .initiatives-content {
+<<<<<<< HEAD
   padding: 20px;
+=======
+  padding: 40px 20px;
+>>>>>>> 53c8aae7b7afe1e10f223405e8e51a7ad9cf81e6
   text-align: center;
 }
 .initiatives-read-more .btn-secondary {
   width: 250px !important;
 }
+<<<<<<< HEAD
+=======
+.initiatives-post-content {
+  padding: 15px 0 0 0;
+}
+.initiatives-recent-list li a {
+  font-size: 20px;
+  line-height: 30px;
+  padding-top: 15px;
+}
+.initiatives-recent-title {
+  position: relative;
+}
+.initiatives-recent-title::after {
+  content: "";
+  position: absolute;
+  background-color: #F74225;
+  width: 100px;
+  height: 3px;
+  left: 0;
+  bottom: -4px;
+}
+>>>>>>> 53c8aae7b7afe1e10f223405e8e51a7ad9cf81e6
 
 /* ----- Footer Connect ----- */
 .footer-connect {
